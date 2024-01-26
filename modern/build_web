@@ -1,0 +1,2 @@
+export PATH=$PATH:/usr/local/Sencha
+npm run build
