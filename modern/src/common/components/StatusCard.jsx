@@ -29,7 +29,9 @@ import PublishIcon from '@mui/icons-material/Publish';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PendingIcon from '@mui/icons-material/Pending';
-import TripIcon from '@mui/icons-material/TripOriginSharp';
+import TripIcon from '@mui/icons-material/PlayCircleFilled';
+import PauseIcon from '@mui/icons-material/PauseCircleFilled';
+import EventIcon from '@mui/icons-material/NotificationsActive';
 
 import { useTranslation } from './LocalizationProvider';
 import RemoveDialog from './RemoveDialog';
@@ -264,6 +266,20 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                 >
                   <ReplayIcon />
                 </IconButton>
+
+                <IconButton
+                  onClick={() => navigate('/reports/event')}
+                  disabled={disableActions || !position}
+                >
+                  <EventIcon />
+                </IconButton>				  
+
+                <IconButton
+                  onClick={() => navigate('/reports/stop')}
+                  disabled={disableActions || !position}
+                >
+                  <PauseIcon />
+                </IconButton>				  
 				
                 <IconButton
                   onClick={() => navigate('/reports/trip')}
