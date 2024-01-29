@@ -256,32 +256,22 @@ const StatusCard = ({ deviceId, position, onClose, disableActions, desktopPaddin
                 >
                   <PendingIcon />
                 </IconButton>
+				
                 <IconButton
                   onClick={() => navigate('/replay')}
                   disabled={disableActions || !position}
                 >
                   <ReplayIcon />
                 </IconButton>
+				
                 <IconButton
-                  onClick={() => navigate(`/settings/device/${deviceId}/command`)}
-                  disabled={disableActions}
+                  onClick={() => navigate('/reports/trip')}
+                  disabled={disableActions || !position}
                 >
-                  <PublishIcon />
-                </IconButton>
-                <IconButton
-                  onClick={() => navigate(`/settings/device/${deviceId}`)}
-                  disabled={disableActions || deviceReadonly}
-                >
-                  <EditIcon />
-                </IconButton>
-                <IconButton
-                  onClick={() => setRemoving(true)}
-                  disabled={disableActions || deviceReadonly}
-                  className={classes.delete}
-                >
-                  <DeleteIcon />
-                </IconButton>
-              </CardActions>
+                  <TripIcon />
+                </IconButton>				  
+				  
+                </CardActions>
             </Card>
           </Draggable>
         )}
